@@ -98,5 +98,40 @@ class AppSettings(object):
             "invitations.forms.InvitationAdminChangeForm"
         )
 
+    @property
+    def MESSAGE_INVITE_INVALID(self):
+        return self._setting(
+            "MESSAGE_INVITE_INVALID",
+            "invitations/messages/invite_invalid.txt"
+        )
+
+    @property
+    def MESSAGE_INVITE_ALREADY_ACCEPTED(self):
+        return self._setting(
+            "MESSAGE_INVITE_ALREADY_ACCEPTED",
+            "invitations/messages/invite_already_accepted.txt"
+        )
+
+    @property
+    def MESSAGE_INVITE_EXPIRED(self):
+        return self._setting(
+            "MESSAGE_INVITE_EXPIRED",
+            "invitations/messages/invite_expired.txt"
+        )
+
+    @property
+    def MESSAGE_INVITE_ACCEPTED(self):
+        return self._setting(
+            "MESSAGE_INVITE_ACCEPTED",
+            "invitations/messages/invite_accepted.txt"
+        )
+
+    @property
+    def EMAIL_INVITE(self):
+        return self._setting(
+            "EMAIL_INVITE",
+            "invitations/email/email_invite"
+        )
+
 
 app_settings = AppSettings('INVITATIONS_')

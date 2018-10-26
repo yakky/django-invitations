@@ -126,7 +126,7 @@ class AcceptInvite(SingleObjectMixin, View):
             get_invitations_adapter().add_message(
                 self.request,
                 messages.ERROR,
-                'invitations/messages/invite_invalid.txt')
+                app_settings.MESSAGE_INVITE_INVALID)
             return redirect(app_settings.LOGIN_REDIRECT)
 
         # The invitation was previously accepted, redirect to the login
@@ -135,7 +135,7 @@ class AcceptInvite(SingleObjectMixin, View):
             get_invitations_adapter().add_message(
                 self.request,
                 messages.ERROR,
-                'invitations/messages/invite_already_accepted.txt',
+                app_settings.MESSAGE_INVITE_ALREADY_ACCEPTED,
                 {'email': invitation.email})
             # Redirect to login since there's hopefully an account already.
             return redirect(app_settings.LOGIN_REDIRECT)
@@ -145,7 +145,7 @@ class AcceptInvite(SingleObjectMixin, View):
             get_invitations_adapter().add_message(
                 self.request,
                 messages.ERROR,
-                'invitations/messages/invite_expired.txt',
+                app_settings.MESSAGE_INVITE_EXPIRED,
                 {'email': invitation.email})
             # Redirect to sign-up since they might be able to register anyway.
             return redirect(self.get_signup_redirect())
@@ -183,7 +183,7 @@ def accept_invitation(invitation, request, signal_sender):
     get_invitations_adapter().add_message(
         request,
         messages.SUCCESS,
-        'invitations/messages/invite_accepted.txt',
+        app_settings.MESSAGE_INVITE_ACCEPTED,
         {'email': invitation.email})
 
 

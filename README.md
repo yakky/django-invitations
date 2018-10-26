@@ -127,6 +127,26 @@ Bulk invites are supported via JSON.  Post a list of comma separated emails to t
 
     App registry path of the invitation model used in the current project, for customization purposes.
 
+* `MESSAGE_INVITE_INVALID` (default=`invitations/messages/invite_invalid.txt`)
+
+    Path to invalid invite message template
+
+* `MESSAGE_INVITE_ALREADY_ACCEPTED` (default=`invitations/messages/invite_already_accepted.txt`)
+
+    Path to invite already accepted message template
+
+* `MESSAGE_INVITE_EXPIRED` (default=`invitations/messages/invite_expired.txt`)
+
+    Path to invite expired message template
+
+* `MESSAGE_INVITE_ACCEPTED` (default=`invitations/messages/invite_accepted.txt`)
+
+    Path to invite accepted message template
+
+* `EMAIL_INVITE` (default=`invitations/email/email_invite`)
+
+    Base path to invitation email body and subject files
+
 ### Signals
 
 The following signals are emitted:
